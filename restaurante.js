@@ -64,3 +64,15 @@ platillosOrdenados = platillosOrdenados.map((platillo) => {
     return `${platillo.nombre} - $${platillo.precio}`;
 });
 console.log(platillosOrdenados);
+
+// Filtrar platillos por categoría
+function filtrarPorCategoria(categoria) {
+    return platillos.filter((platillo) => {
+        return platillo.categoria.toLowerCase() === categoria.toLowerCase();
+    });
+}
+
+const categoriaBuscada = "Bebidas";
+console.log(`\n Platillos en la categoría: ${categoriaBuscada}`);
+const platillosCategoria = filtrarPorCategoria(categoriaBuscada);
+console.log(platillosCategoria);
