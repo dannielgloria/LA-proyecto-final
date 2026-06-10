@@ -39,3 +39,13 @@ const resultadoBusqueda = buscarPlatillo(patilloBuscado);
 
 console.log(`\n Buscando el platillo: ${patilloBuscado}`);
 console.log(resultadoBusqueda ? `Platillo encontrado: ${resultadoBusqueda.nombre} - $${resultadoBusqueda.precio}` : "Platillo no encontrado");
+
+// Calcular valor total del inventario
+function calcularValorInventario(menu) {
+    return menu.reduce((total, platillo) => {
+        return total + (platillo.precio * platillo.cantidad);
+    }, 0);
+}
+
+const valorTotalInventario = calcularValorInventario(platillos);
+console.log(`\n Valor total del inventario: $${valorTotalInventario}`);
