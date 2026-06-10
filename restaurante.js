@@ -76,3 +76,20 @@ const categoriaBuscada = "Bebidas";
 console.log(`\n Platillos en la categoría: ${categoriaBuscada}`);
 const platillosCategoria = filtrarPorCategoria(categoriaBuscada);
 console.log(platillosCategoria);
+
+// Agregar un nuevo platillo al menú
+function agregarPlatillo(nuevoPlatillo) {
+    const existe = platillos.some((platillo) => {
+        return platillo.id === nuevoPlatillo.id;
+    });
+    if (!existe) {
+        platillos.push(nuevoPlatillo);
+        console.log(`\n Nuevo platillo agregado: ${nuevoPlatillo.nombre}`);
+    } else {
+        console.log(`\n No se pudo agregar el platillo. El ID ${nuevoPlatillo.id} ya existe.`);
+    }
+}
+
+const nuevoPlatillo = { id: 11, nombre: "Quesadillas de Flor de Calabaza", precio: 55, cantidad: 40, categoria: "Comida" };
+agregarPlatillo(nuevoPlatillo);
+
