@@ -26,3 +26,16 @@ const nombresDisponibles = menuDisponible.map((platillo) => {
     return `${platillo.nombre} - $${platillo.precio}`;
 });
 console.log(nombresDisponibles);
+
+// Buscar un platillo por su nombre (platillo específico)
+function buscarPlatillo(nombre) {
+    return platillos.find((platillo) => {
+        return platillo.nombre.toLowerCase() === nombre.toLowerCase();
+    });
+}
+
+const patilloBuscado = "Chiles en Nogada";
+const resultadoBusqueda = buscarPlatillo(patilloBuscado);
+
+console.log(`\n Buscando el platillo: ${patilloBuscado}`);
+console.log(resultadoBusqueda ? `Platillo encontrado: ${resultadoBusqueda.nombre} - $${resultadoBusqueda.precio}` : "Platillo no encontrado");
