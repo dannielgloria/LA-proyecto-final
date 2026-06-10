@@ -56,3 +56,11 @@ const platillosAgotados = platillos.some((platillo) => {
 })
 console.log(`\n ¿Hay platillos agotados?`);
 console.log(platillosAgotados ? "Sí, hay platillos agotados." : "No, todos los platillos están disponibles.");
+
+// Ordenar productos por precio
+var platillosOrdenados = [...menuDisponible].sort((a, b) => a.precio - b.precio);
+console.log("\n Platillos ordenados por precio (de menor a mayor):");
+platillosOrdenados = platillosOrdenados.map((platillo) => {
+    return `${platillo.nombre} - $${platillo.precio}`;
+});
+console.log(platillosOrdenados);
